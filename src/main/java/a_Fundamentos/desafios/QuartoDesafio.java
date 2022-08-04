@@ -27,6 +27,7 @@ public class QuartoDesafio {
     }
 
     private static boolean headOrTails(){
-        return Math.random() % 2 == 0;
+        double i = Math.floor(Math.random()*10);
+        return i % 2 == 0;
     }
 }

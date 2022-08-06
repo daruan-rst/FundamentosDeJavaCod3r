@@ -1,4 +1,4 @@
-package a_Fundamentos;
+package a_Fundamentos.Operadores;
 
 public class Logicos {
     public static void main(String[] args) {

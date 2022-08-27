@@ -1,10 +1,21 @@
 package c_ClassesEMetodos.Desafios;
 
 /**
- * Desafio: classe data
+ * Desafio: Criar uma classe de data
  */
 public class Data {
     int dia;
     int mes;
     int ano;
+
+    /**
+     * Desafio: fazer um método para retornar a data formatada
+     */
+
+    private static String formatarData(int dia, int mes, int ano){
+        String dd = (dia < 10 ? "0" : "").concat(String.valueOf(dia));
+        String mm = (mes < 10 ? "0" : "").concat(String.valueOf(mes));
+        String yyyy = String.valueOf(ano);
+        return dd+"/"+mm+"/"+yyyy;
+    }
 }

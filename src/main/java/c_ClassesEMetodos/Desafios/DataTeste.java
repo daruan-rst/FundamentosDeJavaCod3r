@@ -8,6 +8,11 @@ public class DataTeste {
         data.mes=8;
         data.ano=2022;
 
-        System.out.printf("A data é: %d/%d/%d", data.dia,data.mes,data.ano);
+        System.out.printf("A data é: %s", data.formatarData());
+
+        Data data2 = new Data(4,9,2023);
+
+        System.out.printf("\nA data é: %s", data2.formatarData());
+
     }
 }

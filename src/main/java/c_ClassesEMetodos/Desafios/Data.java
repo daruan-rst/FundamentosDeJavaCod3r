@@ -4,9 +4,9 @@ package c_ClassesEMetodos.Desafios;
  * Primeiro Desafio: Criar uma classe de data
  */
 public class Data {
-    int dia;
-    int mes;
-    int ano;
+    public int dia;
+    public int mes;
+    public int ano;
 
     /**
      * Segundo Desafio: fazer um método para retornar a data formatada
@@ -30,7 +30,7 @@ public class Data {
         this.ano = 1970;
     }
 
-    Data(int diaParametro, int mesParametro, int anoParametro){
+    public Data(int diaParametro, int mesParametro, int anoParametro){
         this.dia = diaParametro;
         this.mes = mesParametro;
         this.ano = anoParametro;

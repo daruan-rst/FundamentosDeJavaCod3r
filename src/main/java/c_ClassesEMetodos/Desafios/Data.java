@@ -16,7 +16,9 @@ public class Data {
         String dd = (dia < 10 ? "0" : "").concat(String.valueOf(dia));
         String mm = (mes < 10 ? "0" : "").concat(String.valueOf(mes));
         String yyyy = String.valueOf(ano);
-        return dd+"/"+mm+"/"+yyyy;
+         String formato = dd+"/"+mm+"/"+yyyy; // -> Variável local
+//        final String formato = dd+"/"+mm+"/"+yyyy; // -> constante local
+        return formato;
     }
 
     /**

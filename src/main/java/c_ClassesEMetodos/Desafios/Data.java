@@ -25,14 +25,14 @@ public class Data {
      */
 
     Data(){
-        this.dia = 1;
-        this.mes = 1;
-        this.ano = 1970;
+        dia = 1;
+        mes = 1;
+        ano = 1970;
     }
 
     public Data(int diaParametro, int mesParametro, int anoParametro){
-        this.dia = diaParametro;
-        this.mes = mesParametro;
-        this.ano = anoParametro;
+        dia = diaParametro;
+        mes = mesParametro;
+        ano = anoParametro;
     }
 }

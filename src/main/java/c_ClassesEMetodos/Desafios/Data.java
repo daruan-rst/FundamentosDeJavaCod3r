@@ -26,7 +26,7 @@ public class Data {
      * o outro deve ser inicializado com a data 01/01/1970
      */
 
-    Data(){
+    public Data(){
         dia = 1;
         mes = 1;
         ano = 1970;

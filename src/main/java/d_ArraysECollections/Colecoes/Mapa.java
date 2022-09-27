@@ -1,6 +1,4 @@
-package d_ArraysECollections;
-
-import com.sun.security.jgss.GSSUtil;
+package d_ArraysECollections.Colecoes;
 
 import java.util.HashMap;
 import java.util.Map;

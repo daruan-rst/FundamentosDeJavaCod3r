@@ -1,4 +1,4 @@
-package e_OrientacaoAObjetos.Desafios.TerceiroDesafio;
+package e_OrientacaoAObjetos.Desafios.SegundoDesafio;
 
 public class PistaDeCorrida {
 

@@ -9,7 +9,11 @@ public class Carro {
     }
 
     void frear() {
-        this.velocidadeAtual -= 5;
+        if (velocidadeAtual >= 5){
+            this.velocidadeAtual -= 5;
+        }else {
+            velocidadeAtual = 0;
+        }
     }
 
     void qualAMinhaVelociade() {

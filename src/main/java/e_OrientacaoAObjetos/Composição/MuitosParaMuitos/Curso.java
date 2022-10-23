@@ -1,4 +1,4 @@
-package e_OrientacaoAObjetos.MuitosParaMuitos;
+package e_OrientacaoAObjetos.Composição.MuitosParaMuitos;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package e_OrientacaoAObjetos.UmParaMuitos;
+package e_OrientacaoAObjetos.Composição.UmParaMuitos;
 
 public class CompraTeste {
     public static void main(String[] args) {

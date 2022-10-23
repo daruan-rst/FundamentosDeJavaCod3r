@@ -1,4 +1,4 @@
-package e_OrientacaoAObjetos.UmParaUm;
+package e_OrientacaoAObjetos.Composição.UmParaUm;
 
 public class Motor{
 

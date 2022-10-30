@@ -4,9 +4,10 @@ public class PistaDeCorrida {
 
 
     public static void main(String[] args) {
-        Carro ferrari = new Ferrari();
+        Ferrari ferrari = new Ferrari();
         Carro fusca = new Fusca();
 
+        ferrari.ligarAr();
         fusca.acelerar();
         ferrari.acelerar();
 
@@ -16,6 +17,19 @@ public class PistaDeCorrida {
 
         ferrari.frear();
         fusca.acelerar();
+
+        fusca.qualAMinhaVelociade();
+        ferrari.qualAMinhaVelociade();
+        fusca.quemEstaNaFrente(ferrari);
+
+        ferrari.ligarTurbo();
+        ferrari.acelerar();
+
+        ferrari.qualAMinhaVelociade();
+        ferrari.quemEstaNaFrente(fusca);
+
+        ferrari.desligarTurbo();
+        ferrari.acelerar();
 
         fusca.qualAMinhaVelociade();
         ferrari.qualAMinhaVelociade();

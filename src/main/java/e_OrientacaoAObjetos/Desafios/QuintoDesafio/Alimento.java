@@ -1,6 +1,6 @@
 package e_OrientacaoAObjetos.Desafios.QuintoDesafio;
 
-public class Alimento {
+public abstract class Alimento {
 
     public Alimento(double peso){
         setPeso(peso);

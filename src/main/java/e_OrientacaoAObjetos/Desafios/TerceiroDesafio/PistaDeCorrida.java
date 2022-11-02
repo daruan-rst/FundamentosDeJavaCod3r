@@ -14,6 +14,7 @@ public class PistaDeCorrida {
         fusca.qualAMinhaVelociade();
         ferrari.qualAMinhaVelociade();
         fusca.quemEstaNaFrente(ferrari);
+        System.out.println(ferrari.velocidadeDoAr());
 
         ferrari.frear();
         fusca.acelerar();

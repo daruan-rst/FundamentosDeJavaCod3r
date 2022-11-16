@@ -17,4 +17,11 @@ public class Produto extends Object{
         return "Nome: " + nome + " tem preço de R$" + precoFinal;
     }
 
+    public double getPreco() {
+        return preco;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
 }

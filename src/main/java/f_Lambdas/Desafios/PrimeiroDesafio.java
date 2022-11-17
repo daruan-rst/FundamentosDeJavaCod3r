@@ -2,8 +2,13 @@ package f_Lambdas.Desafios;
 
 import f_Lambdas.Produto;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
@@ -25,10 +30,10 @@ public class PrimeiroDesafio {
         UnaryOperator<Double> applyTaxes = price -> price >= 2500 ? price*(1.085) : price;
         UnaryOperator<Double> applyDeliveryFee = price -> price >= 3000 ? price + 100 : price + 50;
         UnaryOperator<Double> round = price -> {
-            DecimalFormat df = new DecimalFormat("0,00");
-            return Double.parseDouble(df.format(price));
+            BigDecimal bd = new BigDecimal(price);
+            return bd.round(new MathContext(2, RoundingMode.HALF_UP)).doubleValue();
         };
-        Function<Double, String> format = price -> ("R$" + price.toString());
+        Function<Double, String> format = price -> ("R$" + price.toString()).replace(".", ",");
 
         String finalPrice = applyDescount
                                 .andThen(applyTaxes)

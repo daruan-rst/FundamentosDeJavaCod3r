@@ -5,10 +5,6 @@ import f_Lambdas.Produto;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.util.Locale;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
@@ -26,8 +22,8 @@ public class PrimeiroDesafio {
 
         Produto p = new Produto("iPad", 3235.89, 0.13);
 
-        Function<Produto, Double> applyDescount = p1 -> p1.getPreco()*(1-p1.getDesconto());
-        UnaryOperator<Double> applyTaxes = price -> price >= 2500 ? price*(1.085) : price;
+        Function<Produto, Double> applyDescount = p1 -> p1.getPreco() * (1 - p1.getDesconto());
+        UnaryOperator<Double> applyTaxes = price -> price >= 2500 ? price * (1.085) : price;
         UnaryOperator<Double> applyDeliveryFee = price -> price >= 3000 ? price + 100 : price + 50;
         UnaryOperator<Double> round = price -> {
             BigDecimal bd = new BigDecimal(price);
@@ -36,11 +32,11 @@ public class PrimeiroDesafio {
         Function<Double, String> format = price -> ("R$" + price.toString()).replace(".", ",");
 
         String finalPrice = applyDescount
-                                .andThen(applyTaxes)
-                                .andThen(applyDeliveryFee)
-                                .andThen(round)
-                                .andThen(format)
-                                .apply(p);
+                .andThen(applyTaxes)
+                .andThen(applyDeliveryFee)
+                .andThen(round)
+                .andThen(format)
+                .apply(p);
 
         System.out.println(finalPrice);
     }

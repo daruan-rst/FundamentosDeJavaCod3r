@@ -1,5 +1,6 @@
-package h_TratamentoDeErros;
+package h_TratamentoDeErros.personalizadaA;
 
+import h_TratamentoDeErros.Aluno;
 import h_TratamentoDeErros.personalizadaA.NumeroForaIntervaloException;
 import h_TratamentoDeErros.personalizadaA.StringVaziaException;
 import h_TratamentoDeErros.personalizadaA.Validar;

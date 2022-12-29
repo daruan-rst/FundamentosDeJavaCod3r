@@ -1,5 +1,7 @@
 package i_JUnit5_ProjetoCampoMinado.modelo;
 
+import i_JUnit5_ProjetoCampoMinado.excecao.ExplosaoException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,34 @@ public class Campo {
             return true;
         }
         return false;
+    }
+
+    void alternarMarcacao(){
+        if (!aberto){
+            marcado = !marcado;
+        }
+    }
+
+    boolean abrir(){
+        if (!aberto && !marcado){
+            aberto = true;
+
+            if (minado){
+                throw new ExplosaoException();
+            }
+
+            if (vizinhancaSegura()){
+                vizinhos.forEach(Campo::abrir);
+            }
+
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    boolean vizinhancaSegura(){
+        return vizinhos.stream().noneMatch(campo -> campo.minado);
     }
 
 }

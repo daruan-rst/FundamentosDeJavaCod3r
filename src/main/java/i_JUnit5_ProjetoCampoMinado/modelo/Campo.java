@@ -4,6 +4,7 @@ import i_JUnit5_ProjetoCampoMinado.excecao.ExplosaoException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Campo {
 
@@ -83,4 +84,54 @@ public class Campo {
         return !isAberto();
     }
 
+    public int getLinha() {
+        return linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    boolean objetivoAlcancado(){
+        boolean desvendado = !minado && aberto;
+        boolean protegido = minado && marcado;
+        return desvendado || protegido;
+    }
+
+    long minasNaVizinhanca(){
+        Predicate<Campo> vizinhoMinado = v -> v.minado;
+        return vizinhos.stream().filter(vizinhoMinado).count();
+    }
+
+    void reinicias(){
+        aberto = false;
+        minado = false;
+        marcado = false;
+    }
+
+    public String toString(){
+        if (marcado){
+            return "x";
+        } else if (aberto && minado) {
+            return "*";
+        } else if (aberto && minasNaVizinhanca() > 0) {
+            return mineTextColor((int) minasNaVizinhanca());
+        } else if(aberto){
+            return " ";
+        }else {
+            return "?";
+        }
+    }
+
+    public static String mineTextColor(int minasNaVizinhanca){
+        String color;
+        switch (minasNaVizinhanca){
+            case 1 -> color = "\u001B[34m";
+            case 2 -> color = "\u001B[32m";
+            case 3 -> color = "\u001B[31m";
+            case 4 -> color = "\u001B[35m";
+            default -> color = "\u001B[30m";
+        }
+        return color + Long.toString(minasNaVizinhanca) + "\u001B[0m";
+    }
 }

@@ -131,4 +131,22 @@ public class CampoTeste {
         assertTrue(campo22.isAberto() && campo11.isFechado());
         assertFalse(campo12.isAberto());
     }
+
+    @Test
+    void testeObjetivoAlcancado(){
+        campo.minar();
+        campo.alternarMarcacao();
+        assertTrue(campo.objetivoAlcancado());
+    }
+
+    @Test
+    void testeReiniciar(){
+        campo.minar();
+        campo.alternarMarcacao();
+
+        campo.reiniciar();
+        assertFalse(campo.isMarcado());
+        assertFalse(campo.isMinado());
+        assertFalse(campo.isAberto());
+    }
 }

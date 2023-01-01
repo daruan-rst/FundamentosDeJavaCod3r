@@ -84,6 +84,10 @@ public class Campo {
         return !isAberto();
     }
 
+    public boolean isMinado() {
+        return minado;
+    }
+
     public int getLinha() {
         return linha;
     }
@@ -103,7 +107,7 @@ public class Campo {
         return vizinhos.stream().filter(vizinhoMinado).count();
     }
 
-    void reinicias(){
+    void reiniciar(){
         aberto = false;
         minado = false;
         marcado = false;
@@ -123,7 +127,7 @@ public class Campo {
         }
     }
 
-    public static String mineTextColor(int minasNaVizinhanca){
+    private static String mineTextColor(int minasNaVizinhanca){
         String color;
         switch (minasNaVizinhanca){
             case 1 -> color = "\u001B[34m";

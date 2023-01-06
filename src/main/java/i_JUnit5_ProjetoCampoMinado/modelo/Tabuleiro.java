@@ -9,7 +9,6 @@ import java.util.function.Predicate;
 public class Tabuleiro {
 
     private int linhas;
-
     private int colunas;
     private int minas;
     private final List<Campo> campos = new ArrayList<>();
@@ -67,9 +66,9 @@ public class Tabuleiro {
         Predicate<Campo> minado = campo -> campo.isMinado();
 
         do{
-            minasArmadas = campos.stream().filter(minado).count();
             int aleatorio = (int) (Math.random() * campos.size());
             campos.get(aleatorio).minar();
+            minasArmadas = campos.stream().filter(minado).count();
         }while(minasArmadas < minas);
 
 

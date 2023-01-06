@@ -33,8 +33,6 @@ public class TabuleiroConsole {
                     continuar = false;
                 } else {
                     tabuleiro.reiniciar();
-//                }else if ("s".equalsIgnoreCase(resposta)) {
-//                    tabuleiro.reiniciar();
                 }
             }
         }catch (SairException e){
@@ -63,7 +61,7 @@ public class TabuleiroConsole {
                     tabuleiro.alternarMarcacao(xy.next(), xy.next());
                 }
             }
-
+            System.out.println(tabuleiro);
             System.out.println("Você ganhou!");
         }catch (ExplosaoException e){
             System.out.println(tabuleiro);

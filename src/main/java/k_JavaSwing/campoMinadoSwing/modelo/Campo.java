@@ -46,7 +46,7 @@ public class Campo {
         return false;
     }
 
-    void alternarMarcacao(){
+    public void alternarMarcacao(){
         if (!aberto){
             marcado = !marcado;
 
@@ -58,7 +58,7 @@ public class Campo {
         }
     }
 
-    boolean abrir(){
+   public boolean abrir(){
         if (!aberto && !marcado){
 
             if (minado){
@@ -78,7 +78,7 @@ public class Campo {
         }
     }
 
-    boolean vizinhancaSegura(){
+    public boolean vizinhancaSegura(){
         return vizinhos.stream().noneMatch(campo -> campo.minado);
     }
 
@@ -121,9 +121,9 @@ public class Campo {
         return desvendado || protegido;
     }
 
-    long minasNaVizinhanca(){
+    public int minasNaVizinhanca(){
         Predicate<Campo> vizinhoMinado = v -> v.minado;
-        return vizinhos.stream().filter(vizinhoMinado).count();
+        return (int) vizinhos.stream().filter(vizinhoMinado).count();
     }
 
     void reiniciar(){

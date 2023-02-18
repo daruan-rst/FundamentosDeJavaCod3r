@@ -8,7 +8,7 @@ public class FabricaConexao {
 
     public static Connection getConexao(){
         try {
-            final String stringDeConexao = "jdbc:mysql://localhost:3307?verifyServerCertificate=false&useSSL=true";
+            final String stringDeConexao = "jdbc:mysql://localhost:3307/curso_java?verifyServerCertificate=false&useSSL=true";
             final String usuario = "root";
             final String senha = "root";
 

@@ -29,6 +29,7 @@ public class AtualizarPessoas {
             String opcao = sc.next();
             if (opcao.equalsIgnoreCase("s")) {
                 codigo = getCodigo();
+                sc.next();
                 pessoaSelecionada = searchForPerson(conexao, codigo);
             }
             else if (opcao.equalsIgnoreCase("n")){
@@ -44,10 +45,13 @@ public class AtualizarPessoas {
 
         String novoNome  = getNovoNome(pessoaAtualizar.getNome());
 
-        boolean atualizado = updatePessoa(conexao, codigo, pessoaAtualizar, novoNome);
-
-        String response = atualizado ?  "Aualizado com sucesso!\n Nome alterado de: " + pessoaAtualizar.getNome() + "\n  Para: " + novoNome :
-                                        "Não foi possível atualizar " + pessoaAtualizar.getNome();
+        String response;
+        try{
+            updatePessoa(conexao, codigo, pessoaAtualizar, novoNome);
+            response = "Aualizado com sucesso!\n Nome alterado de: " + pessoaAtualizar.getNome() + "\n  Para: " + novoNome;
+        }catch (Exception e){
+            response = "Não foi possível atualizar " + pessoaAtualizar.getNome();
+        }
 
         System.out.println(response);
 
@@ -55,12 +59,11 @@ public class AtualizarPessoas {
         sc.close();
     }
 
-    private static boolean updatePessoa(Connection conexao, int codigo, Pessoa pessoaAtualizar, String novoNome) throws SQLException {
+    private static void updatePessoa(Connection conexao, int codigo, Pessoa pessoaAtualizar, String novoNome) throws SQLException {
         PreparedStatement stmt = conexao.prepareStatement(UPDATE_SQL);
         stmt.setString(1,novoNome);
         stmt.setInt(2, codigo);
-        boolean atualizado = stmt.execute();
-        return atualizado;
+        stmt.execute();
     }
 
     private static String getNovoNome(String antigoNome) {

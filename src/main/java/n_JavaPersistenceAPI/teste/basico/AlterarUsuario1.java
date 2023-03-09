@@ -19,6 +19,7 @@ public class AlterarUsuario1 {
         usuario.setEmail("leonardo@lanche.com.br");
 
         em.merge(usuario);
+
         em.getTransaction().commit();
 
         em.close();

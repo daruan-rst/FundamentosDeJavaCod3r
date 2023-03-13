@@ -3,7 +3,7 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="exercicios-jpa">
+    <persistence-unit name="exercicios-jpa" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>n_JavaPersistenceAPI.modelo.basico.Usuario</class>
         <class>n_JavaPersistenceAPI.modelo.basico.Produto</class>
@@ -27,13 +27,13 @@
 <!--        <class>modelo.heranca.AlunoBolsista</class>-->
 
         <properties>
-            <property name="javax.persistence.jdbc.driver"
+            <property name="jakarta.persistence.jdbc.driver"
                       value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url"
+            <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:mysql://localhost/curso_java"/>
-            <property name="javax.persistence.jdbc.user"
+            <property name="jakarta.persistence.jdbc.user"
                       value="root"/>
-            <property name="javax.persistence.jdbc.password"
+            <property name="jakarta.persistence.jdbc.password"
                       value="root"/>
 
             <property name="hibernate.dialect"

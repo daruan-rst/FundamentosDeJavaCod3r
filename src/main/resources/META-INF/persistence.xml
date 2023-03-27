@@ -9,13 +9,14 @@
         <class>n_JavaPersistenceAPI.modelo.basico.Produto</class>
         <class>n_JavaPersistenceAPI.modelo.umpraum.Assento</class>
         <class>n_JavaPersistenceAPI.modelo.umpraum.Cliente</class>
+        <class>n_JavaPersistenceAPI.modelo.umpramuitos.Pedido</class>
+        <class>n_JavaPersistenceAPI.modelo.umpramuitos.ItemPedido</class>
 
         <!--        <mapping-file>META-INF/consultas.xml</mapping-file>-->
 
         <!--        <class>modelo.basico.Usuario</class>-->
         <!--        <class>modelo.basico.Produto</class>-->
-<!--        <class>modelo.umpramuitos.Pedido</class>-->
-<!--        <class>modelo.umpramuitos.ItemPedido</class>-->
+
 <!--        <class>modelo.muitospramuitos.Tio</class>-->
 <!--        <class>modelo.muitospramuitos.Sobrinho</class>-->
 <!--        <class>modelo.muitospramuitos.Filme</class>-->

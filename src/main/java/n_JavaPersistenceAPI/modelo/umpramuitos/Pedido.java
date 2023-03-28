@@ -20,7 +20,10 @@ public class Pedido {
 
     @Column(nullable = false)
     private Date data;
-
+    
+    // esse é o valor default de fecth (...ToMany -> LAZY)
+    @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY)
+    private List<ItemPedido> itens;
 
 
     public Pedido() {
@@ -49,4 +52,11 @@ public class Pedido {
     }
 
 
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
 }

@@ -10,6 +10,7 @@ public class ObterPedidos {
         DAO<Pedido> dao = new DAO<>(Pedido.class);
 
         Pedido pedido = dao.obterPorID(1L);
+//        dao.fechar();  -> Se o pedido não estiver como Lazy então gerará uma LazyInitializationException ->
 
         for (ItemPedido item : pedido.getItens()){
             System.out.println(item.getQuantidade());

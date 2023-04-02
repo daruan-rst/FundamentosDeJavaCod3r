@@ -1,4 +1,4 @@
-package n_JavaPersistenceAPI.teste.muitospramuitos;
+package n_JavaPersistenceAPI.teste.consulta;
 
 import n_JavaPersistenceAPI.infra.DAO;
 import n_JavaPersistenceAPI.modelo.muitospramuitos.Ator;

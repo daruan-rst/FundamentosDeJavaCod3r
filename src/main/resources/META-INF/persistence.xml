@@ -21,14 +21,15 @@
         <class>n_JavaPersistenceAPI.modelo.composicao.Endereco</class>
         <class>n_JavaPersistenceAPI.modelo.composicao.Fornecedor</class>
         <class>n_JavaPersistenceAPI.modelo.composicao.Funcionario</class>
+        <class>n_JavaPersistenceAPI.modelo.heranca.Aluno</class>
+        <class>n_JavaPersistenceAPI.modelo.heranca.AlunoBolsista</class>
 
         <!--        <mapping-file>META-INF/consultas.xml</mapping-file>-->
 
 <!--        <class>modelo.composicao.Endereco</class>-->
 <!--        <class>modelo.composicao.Fornecedor</class>-->
 <!--        <class>modelo.composicao.Funcionario</class>-->
-<!--        <class>modelo.heranca.Aluno</class>-->
-<!--        <class>modelo.heranca.AlunoBolsista</class>-->
+
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver"

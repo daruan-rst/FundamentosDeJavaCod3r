@@ -1,4 +1,4 @@
-package o_ModularidadeEmJava.app;
+package o_ModularidadeEmJava.app_calculo.src.calculo.interno;
 
 import java.util.Arrays;
 

@@ -1,6 +1,6 @@
-package o_ModularidadeEmJava.app;
+package o_ModularidadeEmJava.app_calculo.src.calculo;
 
-import br.com.cod3r.app.calculo.interno.OperacoesAritmeticas;
+import o_ModularidadeEmJava.app_calculo.src.calculo.interno.OperacoesAritmeticas;
 
 public class Calculadora {
 

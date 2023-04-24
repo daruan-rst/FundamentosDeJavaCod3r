@@ -1,18 +1,19 @@
 package o_ModularidadeEmJava.app_financeiro.src.financeiro;
 
+import o_ModularidadeEmJava.app_api_publica.src.br.com.cod3r.app.Calculadora;
+
+import java.util.ServiceLoader;
+
 public class Teste {
 
     public static void main(String[] args) {
 
-        Calc c1 = new CalcImpl1();
-        Calc c2 = new CalcImpl2();
+        Calculadora calc = ServiceLoader
+                .load(Calculadora.class)
+                .findFirst()
+                .get();
+        System.out.println(calc.soma(2,3,4));
 
-        System.out.println(c1.soma(1,2,3));
-        System.out.println(c2.soma(1,2,3));
-
-//        Calculadora calc = new Calculadora();
-//        System.out.println(calc.soma(2,3,4));
-//
 //        OperacoesAritmeticas op = new OperacoesAritmeticas();
 //
 //        System.out.println(op.soma(2,3,4));
@@ -31,3 +32,4 @@ public class Teste {
 //
     }
 }
+

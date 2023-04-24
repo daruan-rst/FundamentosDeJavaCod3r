@@ -6,4 +6,8 @@
 //            to app.financeiro;
 //
 //    opens br.com.cod3r.app.calculo to app.financeiro;
+//
+//    requires app.api;
+//    provides  br.com.cod3r.app.Calculadora
+//            with br.com.cod3r.app.calculo.CalculadoraImpl;
 //}

@@ -1,4 +1,4 @@
-package br.com.cod3r.exerciciosjavafx;
+package br.com.cod3r.exerciciosjavafx.basico;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

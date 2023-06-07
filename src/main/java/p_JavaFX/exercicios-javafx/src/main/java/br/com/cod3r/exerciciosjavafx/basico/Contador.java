@@ -27,13 +27,16 @@ public class Contador extends Application {
         botaoIncremento.setOnAction(e -> {
             contador++;
             labelNumero.setText(Integer.toString(contador));
+            determineLabelNumeroColor(contador, labelNumero);
         });
         Button botaoDecremento = new Button("-");
         botaoDecremento.getStyleClass().add("botoes");
         botaoDecremento.setOnAction(e -> {
             contador--;
             labelNumero.setText(Integer.toString(contador));
+            determineLabelNumeroColor(contador, labelNumero);
         });
+
 
         HBox boxBotoes = new HBox();
         boxBotoes.setAlignment(Pos.CENTER);
@@ -57,6 +60,22 @@ public class Contador extends Application {
 
         primaryStage.setScene(cenaPrincipal);
         primaryStage.show();
+
+    }
+
+    private void determineLabelNumeroColor(int contador, Label labelNumero){
+        String lastColor;
+        String color;
+        if (contador % 2 == 0 ){
+            color = "verde";
+            lastColor = "vermelha";
+        }else {
+            color = "verde";
+            lastColor = "vermelha";
+        }
+
+        labelNumero.getStyleClass().remove(lastColor);
+        labelNumero.getStyleClass().add(color);
 
     }
 

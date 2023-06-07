@@ -26,15 +26,14 @@ public class Contador extends Application {
         botaoIncremento.getStyleClass().add("botoes");
         botaoIncremento.setOnAction(e -> {
             contador++;
-            labelNumero.setText(Integer.toString(contador));
-            determineLabelNumeroColor(contador, labelNumero);
+            determineLabelNumeroColor(labelNumero);
         });
         Button botaoDecremento = new Button("-");
         botaoDecremento.getStyleClass().add("botoes");
         botaoDecremento.setOnAction(e -> {
             contador--;
             labelNumero.setText(Integer.toString(contador));
-            determineLabelNumeroColor(contador, labelNumero);
+            determineLabelNumeroColor(labelNumero);
         });
 
 
@@ -63,18 +62,13 @@ public class Contador extends Application {
 
     }
 
-    private void determineLabelNumeroColor(int contador, Label labelNumero){
-        String lastColor;
-        String color;
-        if (contador % 2 == 0 ){
-            color = "verde";
-            lastColor = "vermelha";
-        }else {
-            color = "verde";
-            lastColor = "vermelha";
-        }
+    private void determineLabelNumeroColor(Label labelNumero){
+        labelNumero.setText(Integer.toString(contador));
+        labelNumero.getStyleClass().remove("verde");
+        labelNumero.getStyleClass().remove("vermelha");
 
-        labelNumero.getStyleClass().remove(lastColor);
+        String color = contador > 0 ? "verde" : "vermelha";
+
         labelNumero.getStyleClass().add(color);
 
     }

@@ -1,11 +1,23 @@
 package br.com.cod3r.exerciciosjavafx.fxml;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.net.URL;
 
 public class AppFXML extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        URL arquivoFXML = getClass().getResource("/fxml/Login.fxml");
+        GridPane raiz = FXMLLoader.load(arquivoFXML);
+
+        Scene cena = new Scene(raiz,350,400);
+        stage.setResizable(false);
+        stage.setTitle("Tela de Login");
+        stage.setScene(cena);
         stage.show();
     }
 

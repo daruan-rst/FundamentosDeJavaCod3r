@@ -1,6 +1,7 @@
 module br.com.cod3r.exerciciosjavafx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.controlsfx.controls;
 
 
     opens basico;

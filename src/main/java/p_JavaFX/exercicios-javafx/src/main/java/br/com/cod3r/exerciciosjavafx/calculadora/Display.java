@@ -1,4 +1,4 @@
-package calculadora;
+package br.com.cod3r.exerciciosjavafx.calculadora;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

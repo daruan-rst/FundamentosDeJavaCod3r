@@ -1,4 +1,4 @@
-package calculadora;
+package br.com.cod3r.exerciciosjavafx.calculadora;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;

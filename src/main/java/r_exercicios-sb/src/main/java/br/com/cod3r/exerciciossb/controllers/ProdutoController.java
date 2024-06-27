@@ -5,6 +5,8 @@ import br.com.cod3r.exerciciossb.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequestMapping(path = "/api/produtos")
 public class ProdutoController {
@@ -13,8 +15,11 @@ public class ProdutoController {
     private ProdutoRepository produtoRepository;
 
     @PostMapping
-    public @ResponseBody Produto novoProduto(@RequestParam String nome){
-        Produto produto = new Produto(nome);
+    public @ResponseBody Produto novoProduto(
+            @RequestParam String nome,
+            @RequestParam String preco,
+            @RequestParam String desconto){
+        Produto produto = new Produto(nome, new BigDecimal(preco), new BigDecimal(desconto));
         produtoRepository.save(produto);
         return produto;
     }

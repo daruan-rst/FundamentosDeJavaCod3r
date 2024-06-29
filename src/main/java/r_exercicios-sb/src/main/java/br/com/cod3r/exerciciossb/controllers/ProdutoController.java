@@ -2,6 +2,7 @@ package br.com.cod3r.exerciciossb.controllers;
 
 import br.com.cod3r.exerciciossb.models.entities.Produto;
 import br.com.cod3r.exerciciossb.repositories.ProdutoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class ProdutoController {
     private ProdutoRepository produtoRepository;
 
     @PostMapping
-    public @ResponseBody Produto novoProduto(Produto produto){
+    public @ResponseBody Produto novoProduto(@Valid Produto produto){
         produtoRepository.save(produto);
         return produto;
     }

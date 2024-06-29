@@ -5,9 +5,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.*;
 import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
@@ -20,7 +18,7 @@ public class Produto {
 
     }
 
-    public Produto(String nome, BigDecimal preco, BigDecimal desconto) {
+    public Produto(String nome, double preco, double desconto) {
         this.nome = nome;
         this.preco = preco;
         this.desconto = desconto;
@@ -29,33 +27,19 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotBlank
     private String nome;
 
-    @DecimalMin(value = "0.0", inclusive = false)
+
+    @Min(value = 0)
     @Column(name="preco")
-    private BigDecimal preco;
+    private double preco;
 
-    @DecimalMin(value = "0.0", inclusive = true)
-    @DecimalMax(value = "1.0", inclusive = true)
+    @Min(value = 0)
+    @Max(value = 1)
     @Column(name="desconto")
-    private BigDecimal desconto;
-
-    public BigDecimal getPreco() {
-        return preco;
-    }
-
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
-
-    public BigDecimal getDesconto() {
-        return desconto;
-    }
-
-    public void setDesconto(BigDecimal desconto) {
-        this.desconto = desconto;
-    }
-
+    private double desconto;
     public int getId() {
         return id;
     }
@@ -70,5 +54,21 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
     }
 }

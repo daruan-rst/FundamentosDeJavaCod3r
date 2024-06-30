@@ -21,4 +21,9 @@ public class ProdutoController {
         return produto;
     }
 
+    @GetMapping
+    public Iterable<Produto> obterProdutos(){
+        return produtoRepository.findAll();
+    }
+
 }

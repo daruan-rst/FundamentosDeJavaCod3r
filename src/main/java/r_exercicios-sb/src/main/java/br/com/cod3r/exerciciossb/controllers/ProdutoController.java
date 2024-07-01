@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/produtos")
@@ -24,6 +25,11 @@ public class ProdutoController {
     @GetMapping
     public Iterable<Produto> obterProdutos(){
         return produtoRepository.findAll();
+    }
+
+    @GetMapping(path="/{id}")
+    public Optional<Produto> obterProdutoPorId(int id){
+        return produtoRepository.findById(id);
     }
 
 }

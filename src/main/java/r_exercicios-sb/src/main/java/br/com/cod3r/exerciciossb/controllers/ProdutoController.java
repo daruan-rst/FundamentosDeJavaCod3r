@@ -4,6 +4,8 @@ import br.com.cod3r.exerciciossb.models.entities.Produto;
 import br.com.cod3r.exerciciossb.repositories.ProdutoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -26,6 +28,15 @@ public class ProdutoController {
     @GetMapping
     public Iterable<Produto> obterProdutos(){
         return produtoRepository.findAll();
+    }
+
+    @GetMapping(path = "/pagina/{numeroPagina}/{qtdePagina}")
+    public Iterable<Produto> pbterProdutosPorPagina
+            (@PathVariable int numeroPagina,
+             @PathVariable int qtdePagina){
+        if(qtdePagina>5) qtdePagina = 5;
+        Pageable page = PageRequest.of(numeroPagina,qtdePagina);
+        return produtoRepository.findAll(page);
     }
 
     @GetMapping(path="/{id}")

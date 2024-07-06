@@ -8,7 +8,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 
 @RestController
@@ -32,7 +31,8 @@ public class ProdutoController {
 
     @GetMapping(path = "/nome/{parteNome}")
     public Iterable<Produto> obterProdutosPorNome(@PathVariable String parteNome){
-        return produtoRepository.findByNomeContainingIgnoreCase(parteNome);
+//        return produtoRepository.findByNomeContainingIgnoreCase(parteNome);
+        return produtoRepository.searchByNameLike(parteNome);
     }
 
     @GetMapping(path = "/pagina/{numeroPagina}/{qtdePagina}")

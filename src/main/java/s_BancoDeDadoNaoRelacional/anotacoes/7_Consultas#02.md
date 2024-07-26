@@ -1,4 +1,4 @@
-### Consultas Avançadas no MongoDB
+### Consultas #02
 
 #### Consulta Simples com Pipeline de Agregação
 
